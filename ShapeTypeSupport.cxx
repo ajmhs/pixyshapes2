@@ -2,10 +2,11 @@
 /*
 WARNING: THIS FILE IS AUTO-GENERATED. DO NOT MODIFY.
 
-This file was generated from ShapeType.idl using "rtiddsgen".
-The rtiddsgen tool is part of the RTI Connext distribution.
+This file was generated from ShapeType.idl
+using RTI Code Generator (rtiddsgen) version 4.3.0.
+The rtiddsgen tool is part of the RTI Connext DDS distribution.
 For more information, type 'rtiddsgen -help' at a command shell
-or consult the RTI Connext manual.
+or consult the Code Generator User's Manual.
 */
 
 #include "ShapeTypeSupport.h"
@@ -46,9 +47,9 @@ Defines:   TDataWriter, TData
 #define TDataWriter ShapeTypeDataWriter
 #define TData       ShapeType
 
-#define ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
+#define RTI_ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
 #include "dds_cpp/generic/dds_cpp_data_TDataWriter.gen"
-#undef ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
+#undef RTI_ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
 
 #undef TDataWriter
 #undef TData
@@ -73,9 +74,9 @@ Defines:   TDataReader, TDataSeq, TData
 #define TDataSeq    ShapeTypeSeq
 #define TData       ShapeType
 
-#define ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
+#define RTI_ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
 #include "dds_cpp/generic/dds_cpp_data_TDataReader.gen"
-#undef ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
+#undef RTI_ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
 
 #undef TDataReader
 #undef TDataSeq
@@ -154,9 +155,9 @@ Defines:   TDataWriter, TData
 #define TDataWriter ShapeTypeExtendedDataWriter
 #define TData       ShapeTypeExtended
 
-#define ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
+#define RTI_ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
 #include "dds_cpp/generic/dds_cpp_data_TDataWriter.gen"
-#undef ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
+#undef RTI_ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
 
 #undef TDataWriter
 #undef TData
@@ -181,9 +182,9 @@ Defines:   TDataReader, TDataSeq, TData
 #define TDataSeq    ShapeTypeExtendedSeq
 #define TData       ShapeTypeExtended
 
-#define ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
+#define RTI_ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
 #include "dds_cpp/generic/dds_cpp_data_TDataReader.gen"
-#undef ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
+#undef RTI_ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
 
 #undef TDataReader
 #undef TDataSeq
@@ -262,9 +263,9 @@ Defines:   TDataWriter, TData
 #define TDataWriter PixyCamConfigDataWriter
 #define TData       PixyCamConfig
 
-#define ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
+#define RTI_ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
 #include "dds_cpp/generic/dds_cpp_data_TDataWriter.gen"
-#undef ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
+#undef RTI_ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
 
 #undef TDataWriter
 #undef TData
@@ -289,9 +290,9 @@ Defines:   TDataReader, TDataSeq, TData
 #define TDataSeq    PixyCamConfigSeq
 #define TData       PixyCamConfig
 
-#define ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
+#define RTI_ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
 #include "dds_cpp/generic/dds_cpp_data_TDataReader.gen"
-#undef ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
+#undef RTI_ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
 
 #undef TDataReader
 #undef TDataSeq

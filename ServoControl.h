@@ -3,10 +3,11 @@
 /*
 WARNING: THIS FILE IS AUTO-GENERATED. DO NOT MODIFY.
 
-This file was generated from ServoControl.idl using "rtiddsgen".
-The rtiddsgen tool is part of the RTI Connext distribution.
+This file was generated from ServoControl.idl
+using RTI Code Generator (rtiddsgen) version 4.3.0.
+The rtiddsgen tool is part of the RTI Connext DDS distribution.
 For more information, type 'rtiddsgen -help' at a command shell
-or consult the RTI Connext manual.
+or consult the Code Generator User's Manual.
 */
 
 #ifndef ServoControl_1848045221_h
@@ -43,9 +44,9 @@ class ServoControl
     typedef ServoControlDataReader DataReader;
     #endif
 
-    DDS_UnsignedShort   pan ;
-    DDS_UnsignedShort   tilt ;
-    DDS_UnsignedShort   frequency ;
+    DDS_UnsignedShort pan;
+    DDS_UnsignedShort tilt;
+    DDS_UnsignedShort frequency;
 
 };
 #if (defined(RTI_WIN32) || defined (RTI_WINCE) || defined(RTI_INTIME)) && defined(NDDS_USER_DLL_EXPORT)
@@ -56,12 +57,11 @@ class ServoControl
 #endif
 
 #ifndef NDDS_STANDALONE_TYPE
-NDDSUSERDllExport DDS_TypeCode* ServoControl_get_typecode(void); /* Type code */
+NDDSUSERDllExport DDS_TypeCode * ServoControl_get_typecode(void); /* Type code */
 NDDSUSERDllExport RTIXCdrTypePlugin *ServoControl_get_type_plugin_info(void);
 NDDSUSERDllExport RTIXCdrSampleAccessInfo *ServoControl_get_sample_access_info(void);
 NDDSUSERDllExport RTIXCdrSampleAccessInfo *ServoControl_get_sample_seq_access_info(void);
 #endif
-
 DDS_SEQUENCE(ServoControlSeq, ServoControl);
 
 NDDSUSERDllExport
@@ -115,7 +115,7 @@ static const DDS_Char * const DEFAULT_CAM_CONTROL_TOPIC_NAME= "pixy/servo_contro
 namespace rti { 
     namespace xcdr {
         template <>
-        struct type_code<ServoControl> {
+        struct type_code< ServoControl> {
             static const RTIXCdrTypeCode * get();
         };
 

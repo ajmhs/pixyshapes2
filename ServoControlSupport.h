@@ -2,10 +2,11 @@
 /*
 WARNING: THIS FILE IS AUTO-GENERATED. DO NOT MODIFY.
 
-This file was generated from ServoControl.idl using "rtiddsgen".
-The rtiddsgen tool is part of the RTI Connext distribution.
+This file was generated from ServoControl.idl
+using RTI Code Generator (rtiddsgen) version 4.3.0.
+The rtiddsgen tool is part of the RTI Connext DDS distribution.
 For more information, type 'rtiddsgen -help' at a command shell
-or consult the RTI Connext manual.
+or consult the Code Generator User's Manual.
 */
 
 #ifndef ServoControlSupport_1848045221_h
@@ -48,12 +49,12 @@ DDS_TYPESUPPORT_CPP(
     ServoControlTypeSupport, 
     ServoControl);
 
-#define ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
+#define RTI_ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
 DDS_DATAWRITER_WITH_DATA_CONSTRUCTOR_METHODS_CPP(ServoControlDataWriter, ServoControl);
-#undef ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
-#define ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
+#undef RTI_ENABLE_TDATAWRITER_DATA_CONSTRUCTOR_METHODS
+#define RTI_ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
 DDS_DATAREADER_W_DATA_CONSISTENCY_CHECK(ServoControlDataReader, ServoControlSeq, ServoControl);
-#undef ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
+#undef RTI_ENABLE_TDATAREADER_DATA_CONSISTENCY_CHECK_METHOD
 
 #if (defined(RTI_WIN32) || defined (RTI_WINCE) || defined(RTI_INTIME)) && defined(NDDS_USER_DLL_EXPORT)
 /* If the code is building on Windows, stop exporting symbols.
