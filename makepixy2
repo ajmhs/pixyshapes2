@@ -1,11 +1,11 @@
 ######################################################################
 # makepixy
 #
-# Builds Pixy demo app using gmake instead of cmake madness
+# Builds Pixyshapes demo
 ######################################################################
 
 ifndef PIXY_HOME
-PIXY_HOME := "/home/faedemo/dev/pixy2"
+    PIXY_HOME := "/home/pixy2"
 endif
 PIXY_INCLUDES = -I$(PIXY_HOME)/src/common/inc \
    -I$(PIXY_HOME)/src/host/libpixyusb2/include \
@@ -19,10 +19,12 @@ PIXY_LIBS = -L$(PIXY_HOME)/build/libpixyusb2 -lpixy2 \
 
 # If undefined in the environment default NDDSHOME to install dir
 ifndef NDDSHOME
-NDDSHOME := "/home/faedemo/rti_connext_dds-7.3.0"
+    NDDSHOME := "/home/rti_connext_dds-7.3.0"
 endif
 
-TARGET_ARCH = armv8Linux-armgcc9.2.1
+ifndef CONNEXTDDS_ARCH
+    CONNEXTDDS_ARCH := "armv8Linux4gcc7.3.0"
+endif
 
 ifndef COMPILER
     COMPILER = g++
@@ -37,7 +39,7 @@ DEFINES = -fpic -DRTI_UNIX -DRTI_LINUX -march=native -mcpu=native -mtune=native 
 
 INCLUDES = -I. -I$(NDDSHOME)/include -I$(NDDSHOME)/include/ndds -I$(PIXY_HOME)/src/host/libpixyusb2/include/
 
-LIBS = -L$(NDDSHOME)/lib/$(TARGET_ARCH) \
+LIBS = -L$(NDDSHOME)/lib/$(CONNEXTDDS_ARCH) \
        -L$(RTI_OPENSSLHOME) \
        -lnddssecurity \
        -lnddscpp -lnddsc -lnddscore $(SYSLIBS) \
@@ -48,19 +50,18 @@ COMMONSOURCES = ShapeTypeSupport.cxx ShapeTypePlugin.cxx ShapeType.cxx \
                 ServoControlSupport.cxx ServoControlPlugin.cxx ServoControl.cxx
 
 EXEC          = pixyshapes
-DIRECTORIES   = objs.dir objs/$(TARGET_ARCH).dir
-COMMONOBJS    = $(COMMONSOURCES:%.cxx=objs/$(TARGET_ARCH)/%.o)
+DIRECTORIES   = objs.dir objs/$(CONNEXTDDS_ARCH).dir
+COMMONOBJS    = $(COMMONSOURCES:%.cxx=objs/$(CONNEXTDDS_ARCH)/%.o)
 
 # We actually stick the objects in a sub directory to keep your directory clean.
-$(TARGET_ARCH) : $(DIRECTORIES) $(COMMONOBJS) \
-	$(EXEC:%=objs/$(TARGET_ARCH)/%.o) \
-	$(EXEC:%=objs/$(TARGET_ARCH)/%)
+$(CONNEXTDDS_ARCH) : $(DIRECTORIES) $(COMMONOBJS) \
+	$(EXEC:%=objs/$(CONNEXTDDS_ARCH)/%.o) \
+	$(EXEC:%=objs/$(CONNEXTDDS_ARCH)/%)
 
-objs/$(TARGET_ARCH)/% : objs/$(TARGET_ARCH)/%.o
+objs/$(CONNEXTDDS_ARCH)/% : objs/$(CONNEXTDDS_ARCH)/%.o
 	$(LINKER) $(LINKER_FLAGS)   -o $@ $@.o $(COMMONOBJS) $(PIXY_LIBS) $(LIBS)
-#	$(LINKER) $(LINKER_FLAGS)   -o $@ $@.o $(COMMONOBJS) $(LIBS)
 
-objs/$(TARGET_ARCH)/%.o : %.cxx  ShapeType.h
+objs/$(CONNEXTDDS_ARCH)/%.o : %.cxx  ShapeType.h
 	$(COMPILER) $(COMPILER_FLAGS)  -o $@ $(DEFINES) $(PIXY_INCLUDES) $(INCLUDES) -c $<
 
 #
